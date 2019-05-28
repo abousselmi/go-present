@@ -1,0 +1,95 @@
+Configurer votre environnement de développement Go sous Linux
+
+13 Apr 2019
+Tags: go, tutoriel, environnement
+
+Ayoub Bousselmi
+enthousiaste du Go
+https://github.com/abousselmi
+@abousselmi7
+
+* Agenda
+
+.background images/bg-top-right.png
+
+- Introduction
+- Installer Go sous Linux
+- Configurer votre espace de travail
+- Créer votre premier projet
+- Utiliser un IDE
+
+* Introduction
+
+Dès ses premières versions, le projet Golang a mis en place une documentation
+de qualité disponible aux adresses suivantes:
+
+- [[https://golang.org/doc/]] pour la documentation du langage lui même. On y trouve par exemple des informations sur l'installation de Go, la syntaxe du langage, la ligne de commande go, etc.
+- [[https://godoc.org/]] pour la documentation des différents packages natifs ainsi que ceux fournient par la communauté.
+
+* Installer Go sous Linux (1/2)
+
+Pour commencer, redez-vous sur l'adresse suivante: [[https://golang.org/dl/]] et télécharger le fichier archive Linux. Au moment de l'écriture de ce tutoriel, la version de Go est `1.12.4` en amd 64 bits.
+
+Pour extraire et copier le contenu sous /usr/local/, vous pouver exécuter la commande suivante:
+
+  tar -C /usr/local -xzf go1.12.4.linux-amd64.tar.gz
+
+Ensuite, il faut mettre à jour la variable d'environnement PATH comme suit:
+
+  export PATH=$PATH:/usr/local/go/bin
+
+* Installer Go sous Linux (2/2)
+
+Pour tester si l'installation s'est bien déroulée:
+
+  go version
+
+Vous devriez voir un résultat qui ressemble au suivant:
+
+  go version go1.12.3 linux/amd64
+
+Pour avoir plus d'information sur l'installation de Go, vous pouvez vous rendre sur [[https://golang.org/doc/install]].
+
+* Configurer votre espace de travail (1/3)
+
+La communauté Go recommande un certain nombre de règles à suivre pour configurer correctement un espace de travail de Go.
+
+En effet, 
+
+- Les dévloppeurs Go conservent généralement tout leur code Go dans un seul espace de travail.
+- Un espace de travail contient plusieurs dépôts (ou simplement des dossiers) gérés avec des logiciels de gestion de versions tel que Git, par exemple.
+- Chaque dépôt contient un ou plusieurs packages.
+- Chaque package consiste en un ou plusieurs fichiers source Go dans un seul répertoire.
+- Le chemin d'accès au répertoire d'un package détermine son chemin d'importation dans le code.
+
+* Configurer votre espace de travail (2/3)
+
+Notez que cela diffère des autres langages et environnements de développements dans lesquels chaque projet a un espace de travail séparé.
+
+* Configurer votre espace de travail (3/3)
+
+  ab@acer:~/go$ tree -L 4
+  .
+  ├── bin
+  │   └── present
+  └── src
+      ├── github.com
+      │   └── abousselmi
+      │       └── go-present
+      └── golang.org
+          └── x
+              ├── net
+              └── tools
+
+Plus d'informations sont disponibles sur [[https://golang.org/doc/code.html]].
+
+* Créer votre premier projet
+
+** Bonjour Go !
+
+** Présentation
+
+* Utiliser Go Present
+
+* Utiliser un IDE
+
