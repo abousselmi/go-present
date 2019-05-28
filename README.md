@@ -1,2 +1,2 @@
 # go-present
-Justing testing go present
+Just testing go present
